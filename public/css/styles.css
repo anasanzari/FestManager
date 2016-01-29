@@ -2457,10 +2457,10 @@ output {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-control:focus {
-    border-color: #66afe9;
+    border-color: #e1eaec;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(225, 234, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(225, 234, 236, 0.6); }
   .form-control::-moz-placeholder {
     color: #999;
     opacity: 1; }
@@ -5813,9 +5813,154 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+/*
+ * 	Core Owl Carousel CSS File
+ *	v1.3.3
+ */
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+/* display none until init */
+.owl-carousel {
+  display: none;
+  position: relative;
+  width: 100%;
+  -ms-touch-action: pan-y; }
+
+.owl-carousel .owl-wrapper {
+  display: none;
+  position: relative;
+  -webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-carousel .owl-wrapper-outer {
+  overflow: hidden;
+  position: relative;
+  width: 100%; }
+
+.owl-carousel .owl-wrapper-outer.autoHeight {
+  -webkit-transition: height 500ms ease-in-out;
+  -moz-transition: height 500ms ease-in-out;
+  -ms-transition: height 500ms ease-in-out;
+  -o-transition: height 500ms ease-in-out;
+  transition: height 500ms ease-in-out; }
+
+.owl-carousel .owl-item {
+  float: left; }
+
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div {
+  cursor: pointer; }
+
+.owl-controls {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; }
+
+/* mouse grab icon */
+.grabbing {
+  cursor: url(../images/grabbing.png) 8 8, move; }
+
+/* fix */
+.owl-carousel .owl-wrapper,
+.owl-carousel .owl-item {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0); }
+
+/*
+* 	Owl Carousel Owl Demo Theme
+*	v1.3.3
+*/
+.owl-theme .owl-controls {
+  margin-top: 10px;
+  text-align: center; }
+
+/* Styling Next and Prev buttons */
+.owl-theme .owl-controls .owl-buttons div {
+  color: #FFF;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */
+  margin: 5px;
+  padding: 3px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background: #869791;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5; }
+
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.owl-theme .owl-controls.clickable .owl-buttons div:hover {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1;
+  text-decoration: none; }
+
+/* Styling Pagination*/
+.owl-theme .owl-controls .owl-page {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  /*IE7 life-saver */ }
+
+.owl-theme .owl-controls .owl-page span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 5px 7px;
+  filter: Alpha(Opacity=50);
+  /*IE7 fix*/
+  opacity: 0.5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background: #869791; }
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+  filter: Alpha(Opacity=100);
+  /*IE7 fix*/
+  opacity: 1; }
+
+/* If PaginationNumbers is true */
+.owl-theme .owl-controls .owl-page span.owl-numbers {
+  height: auto;
+  width: auto;
+  color: #FFF;
+  padding: 2px 10px;
+  font-size: 12px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px; }
+
+/* preloading images */
+.owl-item.loading {
+  min-height: 150px;
+  background: url(../images/AjaxLoader.gif) no-repeat center center; }
+
 @font-face {
   font-family: normal;
-  src: url("../fonts/NexaLight.otf"); }
+  src: url("../fonts/weblysleek.ttf"); }
+@font-face {
+  font-family: title;
+  src: url("../fonts/alpaca.ttf"); }
 * {
   font-family: normal; }
 
@@ -5832,31 +5977,18 @@ a:focus {
   -webkit-box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.6);
   box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.6); }
 
-.trans, a.button {
+.trans {
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.ulstyle, ul.menu, ul.datemenu {
+.ulstyle {
   list-style: none;
   text-align: left; }
 
-.listyle, ul.menu li, ul.datemenu li {
+.listyle {
   text-decoration: none;
   font-size: 1.5rem; }
-
-ul.menu li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 5px 10px; }
-  ul.menu li a img {
-    width: 30px; }
-ul.menu li a:hover {
-  cursor: pointer;
-  color: #E53935; }
-
-ul.datemenu li img {
-  width: 30px; }
 
 h1 {
   font-size: 5rem; }
@@ -5873,7 +6005,7 @@ h4 {
 p {
   font-size: 2rem; }
 
-.lay, .overlay, .front, .back {
+.glass, .overlay, .front, .back {
   position: absolute;
   top: 0;
   left: 0;
@@ -5884,34 +6016,142 @@ p {
 
 .overlay {
   z-index: -1;
-  background: rgba(0, 0, 0, 0.7); }
+  background: rgba(0, 0, 0, 0.55); }
 
 .front {
   z-index: -2;
-  background-image: url("../images/a1.jpg"); }
+  background-image: url("../images/holi.jpg"); }
 
 .back {
   z-index: -3;
-  background-image: url("../images/a2.jpg"); }
+  background-image: url("../images/json.jpg"); }
 
-a.button {
-  background-color: #E53935;
-  -moz-box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: -3px 3px 5px 1px rgba(0, 0, 0, 0.3);
-  display: inline-block;
+.main {
+  min-height: 100vh; }
+  .main .ind_main {
+    padding-top: 200px;
+    color: #fff;
+    text-align: center; }
+    .main .ind_main h1 {
+      font-family: title;
+      font-size: 7rem; }
+
+.button {
+  min-width: 150px;
+  max-width: 300px;
+  margin: 1em;
+  padding: 1em 2em;
   color: #fff;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 2rem;
-  cursor: pointer; }
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  font-weight: 100;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 0; }
 
-a.button:hover {
-  background: #dd201c; }
+.glassbtn {
+  border: 1px solid #e7dce9;
+  overflow: hidden;
+  -webkit-transition: border-color 0.3s, color 0.3s !important;
+  transition: border-color 0.3s, color 0.3s !important;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1) !important;
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1) !important; }
+  .glassbtn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: #37474f;
+    color: #fff;
+    z-index: -1;
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s, background-color 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s; }
+  .glassbtn:hover:before {
+    opacity: 1;
+    background-color: #ccc;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
 
-.loginpage {
-  min-height: 100vh;
-  padding-top: 150px;
-  background-image: url("../images/pattern.png"); }
+.ind_events {
+  text-align: center; }
+  .ind_events h1 {
+    font-family: title;
+    padding: 20px 0px; }
+  .ind_events .owlimg {
+    width: 100%; }
+  .ind_events #owl-demo .item {
+    margin: 3px; }
+
+.ind_log {
+  text-align: center;
+  background-image: url("../images/holi.jpg");
+  background-size: cover;
+  min-height: 500px; }
+  .ind_log .form-control {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 15px 20px;
+    height: auto;
+    color: #fff; }
+    .ind_log .form-control::-moz-placeholder {
+      color: rgba(255, 255, 255, 0.5);
+      opacity: 1; }
+    .ind_log .form-control:-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+    .ind_log .form-control::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.5); }
+  .ind_log .btn {
+    padding: 15px 20px;
+    background: #158A70;
+    color: #fff;
+    width: 100%; }
+    .ind_log .btn:hover {
+      background: #12745e; }
+  .ind_log h1 {
+    font-family: title;
+    padding: 20px 0px; }
+  .ind_log .owlimg {
+    width: 100%; }
+  .ind_log #owl-demo .item {
+    margin: 3px; }
+
+.footer {
+  background: #373a3d;
+  color: #fff; }
+  .footer h3 {
+    font-family: title; }
+  .footer h4 {
+    padding-left: 10px;
+    line-height: 100%; }
+  .footer p {
+    padding-left: 20px; }
+  .footer ul {
+    list-style: none; }
+    .footer ul li {
+      padding: 10px 10px;
+      display: inline-block; }
+      .footer ul li a {
+        margin: 5px 0px; }
+
+a.social {
+  background-color: #5e5353;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border-radius: 100%; }
+  a.social img {
+    height: 30px;
+    width: 30px; }
+  a.social:hover {
+    background-color: #211f1f; }
 
 /*# sourceMappingURL=styles.css.map */

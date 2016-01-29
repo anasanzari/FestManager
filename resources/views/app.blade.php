@@ -7,7 +7,8 @@
     <title>FestManager</title>
     {!! Html::style('css/styles.css') !!}
     {!! Html::script('js/jquery-1.11.3.min.js') !!}
-    {!! Html::script('./static/js/bootstrap.min.js') !!}
+    {!! Html::script('js/bootstrap.min.js') !!}
+    {!! Html::script('js/dynamics.min.js') !!}
 
 </head>
 
