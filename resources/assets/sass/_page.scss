@@ -1,0 +1,147 @@
+
+@font-face{
+    font-family: normal;
+    src:url('../fonts/NexaLight.otf');
+}
+
+*{
+    font-family: normal;
+}
+
+a:focus{
+  outline: 0;
+}
+
+
+@mixin boxshadow($a,$b,$c,$d) {
+  -moz-box-shadow: $a $b $c $d rgba(0,0,0,.6);;
+  -webkit-box-shadow: $a $b $c $d rgba(0,0,0,.6);;
+  box-shadow: $a $b $c $d rgba(0,0,0,.6);
+}
+
+.shadow{
+  @include boxshadow(-3px,3px,5px,1px);
+}
+
+.raised{
+  @include boxshadow(-3px,3px,5px,1px );
+}
+
+
+.trans{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.ulstyle{
+  list-style: none;
+  text-align: left;
+}
+.listyle{
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+ul.menu{
+  @extend .ulstyle;
+  li{
+    @extend .listyle;
+    a{
+          text-decoration: none;
+          color:#fff;
+          padding:5px 10px;
+          img{
+            width:30px;
+          }
+        }
+    a:hover{
+          cursor: pointer;
+          color: #E53935;
+    }
+  }
+
+}
+ul.datemenu{
+  @extend .ulstyle;
+  li{
+    @extend .listyle;
+    img{
+      width:30px;
+    }
+  }
+}
+
+
+h1{
+  font-size: 5rem;
+}
+h2{
+  font-size: 4rem;
+}
+h3{
+  font-size: 3rem;
+}
+h4{
+  font-size: 2.5rem;
+}
+p{
+  font-size: 2rem;
+}
+
+
+
+.lay{
+    position: absolute;
+    top:0;
+    left:0;
+    min-height: 100vh;
+    width:100%;
+    background-position: fixed;
+    background-size: cover;
+}
+.overlay{
+    @extend .lay;
+    z-index: -1;
+    background: rgba(0,0,0,.7);
+}
+.front{
+    @extend .lay;
+    z-index: -2;
+    background-image: url('../images/a1.jpg');
+}
+.back{
+    @extend .lay;
+    z-index: -3;
+    background-image: url('../images/a2.jpg');
+}
+
+a.button{
+    @extend .trans;
+    background-color: #E53935;
+    -moz-box-shadow: -3px 3px 5px 1px rgba(0,0,0,.3);;
+    -webkit-box-shadow: -3px 3px 5px 1px rgba(0,0,0,.3);;
+    box-shadow:-3px 3px 5px 1px rgba(0,0,0,.3);
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+a.button:hover{
+    background: #dd201c;
+}
+
+.loginpage{
+  min-height: 100vh;
+  padding-top: 150px;
+  background-image:url('../images/pattern.png');
+
+}
+
+
+@media screen and (max-width: 400px){
+
+
+}
