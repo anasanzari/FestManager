@@ -2,6 +2,8 @@
 
 return [
 
+	'admin_email' => 'admin@festmanager.com',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Default Authentication Driver

@@ -3,6 +3,7 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\Auth\Registrar;
 use Auth;
 
 class RedirectIfAuthenticated {
@@ -13,6 +14,7 @@ class RedirectIfAuthenticated {
 	 * @var Guard
 	 */
 	protected $auth;
+	protected $registrar;
 
 	/**
 	 * Create a new filter instance.
@@ -20,9 +22,10 @@ class RedirectIfAuthenticated {
 	 * @param  Guard  $auth
 	 * @return void
 	 */
-	public function __construct(Guard $auth)
+	public function __construct(Guard $auth,Registrar $registrar)
 	{
 		$this->auth = $auth;
+		$this->registrar = $registrar;
 	}
 
 	/**
@@ -37,18 +40,7 @@ class RedirectIfAuthenticated {
 		if ($this->auth->check())
 		{
 			$user = Auth::user();
-			if($user->type==0){
-				//employee. Redirect him to employee
-				return redirect('employee');
-			}else if($user->type==1){
-				//not yet. Redirect to customer page
-				return redirect('customer');
-			}else{
-				//admin
-				return redirect('admin');
-			}
-
-			return new RedirectResponse(url('/'));
+			return redirect($this->registrar->redirectUrl($user));
 		}
 
 		return $next($request);

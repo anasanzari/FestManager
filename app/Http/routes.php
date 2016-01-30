@@ -14,3 +14,16 @@
 
 
 Route::get('/','PageController@index');
+Route::get('/register','PageController@register');
+Route::get('/event','PageController@event');
+
+/* auth */
+Route::post('/auth/login','Auth\AuthController@login');
+Route::post('/auth/register','Auth\AuthController@register');
+Route::get('/auth/logout','Auth\AuthController@logout');
+
+
+/* user pages */
+
+Route::get('/dashboard','UserController@index');
+Route::get('/fest/{id}','UserController@fest');

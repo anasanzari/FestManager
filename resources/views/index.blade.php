@@ -26,17 +26,17 @@
 
 <div class="ind_events" id="events">
 
-  <h1>Upcoming Events</h1>
+  <h1>Upcoming Fests</h1>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div id="owl-demo">
-        @for($i=1; $i <= 8; $i++)
+          @foreach($fests as $key => $fest)
           <div class="item">
-            <a href=""><img class="owlimg" src="{{url("images/events/$i.jpg")}}" alt="Owl Image"></a>
+            <a href=""><img class="owlimg" src="{{url($fest->imgUrl)}}" alt="Owl Image"></a>
           </div>
-        @endfor
+          @endforeach
       </div>
     </div>
   </div>
@@ -52,18 +52,22 @@
       <div class="col-md-4 col-md-offset-4">
         <h1>Login</h1>
 
+        @if(isset($errors))
+          @include('errors.errorlist',['err'=>$errors])
+        @endif
+
         {!! Form::open(['url'=>'auth/login#log']) !!}
           <div class="form-group">
-              {!! Form::text('email', null, ['class' => 'form-control','placeholder'=>'Email']) !!}
+              {!! Form::text('email', null, ['class' => 'form-control','placeholder'=>'Email','required'=>'']) !!}
           </div>
           <div class="form-group">
-             <input class="form-control" placeholder="Password" type="password" name="password">
+             <input class="form-control" placeholder="Password" type="password" name="password" required="">
           </div>
           <div class="form-group">
             {!! Form::submit('Login', ['class' => 'btn']) !!}
           </div>
           <div class="form-group">
-            <a href="" class="btn">Register</a>
+            <a href="{{url('/register')}}" class="btn">Register</a>
           </div>
 
           @include('errors.errorlist',['err'=>$errors->cat])

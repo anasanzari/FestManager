@@ -15,11 +15,11 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-				'fname' => 'required|max:255',
-				'lname' => 'required|max:255',
+				'name' => 'required|max:255',
 				'email' => 'required|email|max:255|unique:users',
-				'password' => 'required|confirmed|min:6',
-				'gender' => 'required',
+				'password' => 'required|min:5',
+				'phone' => 'required|max:10',
+				'college' => 'required'
 		]);
 	}
 
@@ -31,15 +31,27 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		/* Sanand! Attention. Creating an Employee(type 0) by default! Figure out how customers and admins are created */
 			return User::create([
-					'fname' => $data['fname'],
-					'lname' => $data['lname'],
+					'name' => $data['name'],
 					'email' => $data['email'],
 					'password' => bcrypt($data['password']),
-					'gender' => $data['gender'],
-					'type' => 0
+					'phone' => $data['phone'],
+					'college' => $data['college']
 			]);
+	}
+
+	public function redirectUrl($user){
+		if($user->email=="admin@festmanager.org"){
+			return '/admin/dashboard';
+		}else{
+			return '/dashboard';
+		}
+	}
+	public function isAdmin($user){
+		if($user->email=="admin@festmanager.org"){
+			return true;
+		}
+		return false;
 	}
 
 }

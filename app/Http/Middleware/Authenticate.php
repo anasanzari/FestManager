@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Contracts\Auth\Registrar;
 
 class Authenticate {
 
@@ -11,6 +12,7 @@ class Authenticate {
 	 * @var Guard
 	 */
 	protected $auth;
+	protected $registrar;
 
 	/**
 	 * Create a new filter instance.
@@ -18,9 +20,10 @@ class Authenticate {
 	 * @param  Guard  $auth
 	 * @return void
 	 */
-	public function __construct(Guard $auth)
+	public function __construct(Guard $auth,Registrar $registrar)
 	{
 		$this->auth = $auth;
+		$this->registrar = $registrar;
 	}
 
 	/**
@@ -42,6 +45,11 @@ class Authenticate {
 			{
 				return redirect()->guest('auth/login');
 			}
+		}
+
+		$user = $this->auth->user();
+		if($this->registrar->isAdmin($user)){
+			return redirect('/admin/dashboard');
 		}
 
 		return $next($request);

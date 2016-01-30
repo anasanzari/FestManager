@@ -25,7 +25,8 @@ class AuthController extends Controller {
 
 	use AuthenticatesAndRegistersUsers;
 
-	  protected $redirectTo = '/';
+	  protected $redirectTo = '/dashboard';
+		protected $failUrl = '/';
 
 	/**
 	 * Create a new authentication controller instance.
@@ -39,28 +40,21 @@ class AuthController extends Controller {
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+		$this->middleware('guest', ['except' => 'logout']);
+	}
+
+	public function logout(){
+		$this->auth->logout();
+		return redirect('/');
 	}
 
 
-	/* overrides */
-
-	public function getRegister()
-	{
-		return view('main');
-	}
-
-	public function getLogin()
-	{
-		return view('main');
-	}
-
-	public function postRegister(Request $request)
+	public function register(Request $request)
 	{
 		$validator = $this->registrar->validator($request->all());
 
 		if ($validator->fails()) {
-					 return view('main',['errors'=>$validator->errors(),'input'=>$request->all()]);
+					 return view('register',['errors'=>$validator->errors(),'input'=>$request->all()]);
 		}
 		$user = $this->registrar->create($request->all());
 		$this->auth->login($user);
@@ -68,7 +62,7 @@ class AuthController extends Controller {
 		return $this->authenticated($request, $user);
 	}
 
-	public function postLogin(Request $request)
+	public function login(Request $request)
 	{
 
 		$this->validate($request, [
@@ -82,7 +76,7 @@ class AuthController extends Controller {
 			return $this->authenticated($request, Auth::user());
 		}
 
-		return redirect($this->loginPath())
+		return redirect($this->failUrl)
 					->withInput($request->only('email', 'remember'))
 					->withErrors([
 						'email' => $this->getFailedLoginMessage(),
@@ -90,18 +84,9 @@ class AuthController extends Controller {
 	}
 
 	public function authenticated($request, $user){
-
-		if($user->type==0){
-			//employee. Redirect him to employee
-			return redirect('employee');
-		}else if($user->type==1){
-			//not yet. Redirect to customer page
-			return redirect('customer');
-		}else{
-			//admin
-			return redirect('admin');
-		}
-
+			return redirect($this->registrar->redirectUrl($user));
 	}
+
+
 
 }

@@ -7,17 +7,27 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Feedback;
-use App\user;
-use App\Booking;
+use App\Fest;
 
 class PageController extends Controller
 {
     //
+    public function __construct(){
+  		$this->middleware('guest', ['except' => 'logout']);
+  	}
 
     function index(){
-      return view('index');
+      $fests = Fest::all();
+      return view('index',['fests'=>$fests]);
     }
 
+    function register(){
+      $input = array('name' => '','college'=>'','email'=>'','phone' =>'');
+      return view('register',['input'=>$input]);
+    }
+
+    function event(){
+      return view('events.event');
+    }
 
 }

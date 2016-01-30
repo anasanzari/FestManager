@@ -3952,7 +3952,7 @@ tbody.collapse.in {
     .navbar-right ~ .navbar-right {
       margin-right: 0; } }
 .navbar-default {
-  background-color: #E84C3D;
+  background-color: rgba(117, 150, 149, 0.78);
   border: none; }
   .navbar-default .navbar-brand {
     color: #eee; }
@@ -3960,15 +3960,15 @@ tbody.collapse.in {
       color: #d5d5d5;
       background-color: transparent; }
   .navbar-default .navbar-text {
-    color: #777; }
+    color: #FFF; }
   .navbar-default .navbar-nav > li > a {
     color: #eee; }
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
       color: #fff;
-      background-color: #CD3E2E; }
+      background-color: rgba(117, 150, 149, 0.95); }
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #CD3E2E; }
+    color: #fff;
+    background-color: #759695; }
   .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
     color: #ccc;
     background-color: transparent; }
@@ -3980,19 +3980,19 @@ tbody.collapse.in {
       background-color: #888; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
-    border-color: #e4311f; }
+    border-color: rgba(101, 133, 132, 0.78); }
   .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #CD3E2E;
-    color: #555; }
+    background-color: #759695;
+    color: #fff; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
       color: #eee; }
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #fff;
-        background-color: #CD3E2E; }
+        background-color: rgba(117, 150, 149, 0.95); }
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-      color: #555;
-      background-color: #CD3E2E; }
+      color: #fff;
+      background-color: #759695; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
@@ -6095,7 +6095,7 @@ p {
   text-align: center;
   background-image: url("../images/holi.jpg");
   background-size: cover;
-  min-height: 500px; }
+  min-height: 90vh; }
   .ind_log .form-control {
     background-color: rgba(0, 0, 0, 0.3);
     border: none;
@@ -6119,10 +6119,6 @@ p {
   .ind_log h1 {
     font-family: title;
     padding: 20px 0px; }
-  .ind_log .owlimg {
-    width: 100%; }
-  .ind_log #owl-demo .item {
-    margin: 3px; }
 
 .footer {
   background: #373a3d;
@@ -6132,8 +6128,6 @@ p {
   .footer h4 {
     padding-left: 10px;
     line-height: 100%; }
-  .footer p {
-    padding-left: 20px; }
   .footer ul {
     list-style: none; }
     .footer ul li {
@@ -6153,5 +6147,39 @@ a.social {
     width: 30px; }
   a.social:hover {
     background-color: #211f1f; }
+
+.event .av {
+  max-width: 125px; }
+
+nav.navbar {
+  margin-bottom: 0px; }
+  nav.navbar .navbar-brand {
+    font-family: title;
+    font-size: 3rem; }
+
+.title {
+  font-family: title; }
+
+.user_main {
+  padding-top: 100px;
+  margin-top: -30px;
+  text-align: center;
+  background-image: url("../images/holi.jpg");
+  background-size: cover;
+  min-height: 90vh; }
+  .user_main h1 {
+    margin-bottom: 25px; }
+  .user_main .owlimg {
+    width: 100%; }
+  .user_main #owl-demo .item {
+    margin: 3px; }
+
+.user_fest {
+  padding-top: 100px;
+  margin-top: -30px;
+  text-align: center;
+  min-height: 90vh; }
+  .user_fest h1 {
+    margin-bottom: 25px; }
 
 /*# sourceMappingURL=styles.css.map */

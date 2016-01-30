@@ -177,9 +177,7 @@ p{
   text-align: center;
   background-image: url('../images/holi.jpg');
   background-size: cover;
-  min-height: 500px;
-
-
+  min-height: 90vh;
 
   .form-control{
     background-color: rgba(0, 0, 0, 0.3);
@@ -202,12 +200,6 @@ p{
     font-family: title;
     padding: 20px 0px;
   }
-  .owlimg{
-    width: 100%;
-  }
-  #owl-demo .item{
-    margin: 3px;
-  }
 }
 
 .footer{
@@ -220,9 +212,7 @@ p{
     padding-left: 10px;
     line-height: 100%;
   }
-  p{
-    padding-left: 20px;
-  }
+
   ul{
     list-style: none;
     li{
@@ -248,6 +238,55 @@ a.social{
         &:hover{
                 background-color: #211f1f;
         }
+}
+
+.event{
+  .av{
+    max-width: 125px;
+  }
+}
+
+nav.navbar{
+
+  margin-bottom: 0px;
+  .navbar-brand{
+    font-family: title;
+    font-size: 3rem;
+  }
+}
+
+.title{
+    font-family: title;
+}
+
+.user_main{
+  padding-top: 100px;
+  margin-top: -30px;
+  text-align: center;
+  background-image: url('../images/holi.jpg');
+  background-size: cover;
+  min-height: 90vh;
+  h1{
+    margin-bottom: 25px;
+  }
+  .owlimg{
+    width: 100%;
+  }
+  #owl-demo .item{
+    margin: 3px;
+  }
+}
+
+
+.user_fest{
+  padding-top: 100px;
+  margin-top: -30px;
+  text-align: center;
+  min-height: 90vh;
+  h1{
+    margin-bottom: 25px;
+  }
+
 }
 
 
