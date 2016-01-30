@@ -6082,7 +6082,9 @@ p {
     transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
 
 .ind_events {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 25px; }
   .ind_events h1 {
     font-family: title;
     padding: 20px 0px; }
@@ -6090,6 +6092,8 @@ p {
     width: 100%; }
   .ind_events #owl-demo .item {
     margin: 3px; }
+  .ind_events .ev_name {
+    color: #000; }
 
 .ind_log {
   text-align: center;
@@ -6160,6 +6164,9 @@ nav.navbar {
 .title {
   font-family: title; }
 
+.ev_name {
+  font-size: 2rem; }
+
 .user_main {
   padding-top: 100px;
   margin-top: -30px;
@@ -6173,6 +6180,8 @@ nav.navbar {
     width: 100%; }
   .user_main #owl-demo .item {
     margin: 3px; }
+  .user_main .ev_name {
+    color: #fff; }
 
 .user_fest {
   padding-top: 100px;
@@ -6181,5 +6190,7 @@ nav.navbar {
   min-height: 90vh; }
   .user_fest h1 {
     margin-bottom: 25px; }
+  .user_fest .details {
+    text-align: left; }
 
 /*# sourceMappingURL=styles.css.map */

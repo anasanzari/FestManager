@@ -12,7 +12,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('users')->insert([
+      /*  DB::table('users')->insert([
           'name' => 'admin',
           'email' => 'admin@festmanager.org',
           'password' => bcrypt('1234'),
@@ -80,7 +80,43 @@ class UserSeeder extends Seeder
           'toDate'=>'2016-03-15',
           'department'=>'Computer Science',
           'imgUrl'=>'images/fests/8.jpg'
-        ]);//6
+        ]);//8
+*/
+        DB::table('events')->insert([
+          'name'=>'DumbC',
+          'festid'=>'1',
+          'details'=>''
+        ]);
+        DB::table('events')->insert([
+          'name'=>'Sample Event',
+          'festid'=>'1',
+          'details'=>''
+        ]);
+
+        DB::table('events')->insert([
+          'name'=>'Believe',
+          'festid'=>'1',
+          'details'=>''
+        ]);
+
+        DB::table('events')->insert([
+          'name'=>'Treasure Hunt',
+          'festid'=>'2',
+          'details'=>''
+        ]);
+        DB::table('events')->insert([
+          'name'=>'General Variety',
+          'festid'=>'2',
+          'details'=>''
+        ]);
+
+        DB::table('events')->insert([
+          'name'=>'Pro Nite',
+          'festid'=>'2',
+          'details'=>''
+        ]);
+
+
 
 
     }

@@ -161,6 +161,8 @@ p{
 
 .ind_events{
   text-align: center;
+  padding-bottom:50px;
+  padding-top: 25px;
   h1{
     font-family: title;
     padding: 20px 0px;
@@ -170,6 +172,9 @@ p{
   }
   #owl-demo .item{
     margin: 3px;
+  }
+  .ev_name{
+    color:#000;
   }
 }
 
@@ -259,6 +264,10 @@ nav.navbar{
     font-family: title;
 }
 
+.ev_name{
+  font-size: 2rem;
+}
+
 .user_main{
   padding-top: 100px;
   margin-top: -30px;
@@ -275,6 +284,9 @@ nav.navbar{
   #owl-demo .item{
     margin: 3px;
   }
+  .ev_name{
+    color: #fff;
+  }
 }
 
 
@@ -285,6 +297,10 @@ nav.navbar{
   min-height: 90vh;
   h1{
     margin-bottom: 25px;
+  }
+
+  .details{
+    text-align: left;
   }
 
 }

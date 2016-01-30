@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('user.nav')
+@include('includes.nav')
 
 <div class="user_fest">
 
@@ -14,14 +14,28 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <h1>Rave Fest</h1>
+        <h1>{{$fest->name}}</h1>
+
 
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-5">
-              <img src="{{url('images/fests/1.jpg')}}" class="img-responsive"/>
+            <div class="col-md-3">
+              <img src="{{url($fest->imgUrl)}}" class="img-responsive"/>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-9 details">
+              <ul>
+                <li>Department : {{$fest->department}}</li>
+                <li>Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
+              </ul>
+              <h3>Events</h3>
+              @if(sizeof($fest->events)==0)
+                <p>No events are posted yet.</p>
+              @endif
+              <div class="list-group">
+                @foreach($fest->events as $key => $value)
+                  <a href="#" class="list-group-item">{{$value->name}}</a>
+                @endforeach
+              </div>
             </div>
           </div>
         </div>

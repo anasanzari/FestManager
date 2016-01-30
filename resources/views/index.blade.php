@@ -34,7 +34,12 @@
         <div id="owl-demo">
           @foreach($fests as $key => $fest)
           <div class="item">
-            <a href=""><img class="owlimg" src="{{url($fest->imgUrl)}}" alt="Owl Image"></a>
+            <div>
+            <a href="{{url('/fest/'.$fest->id)}}">
+              <img class="owlimg" src="{{url($fest->imgUrl)}}" alt="Owl Image">
+            </a>
+            <span class="ev_name">{{$fest->name}}</span>
+            </div>
           </div>
           @endforeach
       </div>
