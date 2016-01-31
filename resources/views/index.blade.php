@@ -124,7 +124,7 @@
 <script>
 var front = document.querySelector('.front');
 var back = document.querySelector('.back');
-var backUrls = ["url('./images/holi.jpg')", "url('./images/kadhakali.jpg')", "url('./images/kid.jpg')"];
+var backUrls = ["url('./images/concert.jpg')", "url('./images/kadhakali.jpg')", "url('./images/kid.jpg')"];
 var frontUrls = ["url('./images/json.jpg')", "url('./images/toy.jpg')", "url('./images/kids.jpg')"];
 var b = 0, f = 0;
 var transition = function (isFadeIn) {

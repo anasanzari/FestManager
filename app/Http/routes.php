@@ -27,3 +27,5 @@ Route::get('/auth/logout','Auth\AuthController@logout');
 
 Route::get('/dashboard','UserController@index');
 Route::get('/fest/{id}','UserController@fest');
+
+Route::get('/admin/dashboard','AdminController@index');

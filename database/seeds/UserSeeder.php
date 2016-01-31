@@ -12,14 +12,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         //
-      /*  DB::table('users')->insert([
+       DB::table('users')->insert([
           'name' => 'admin',
           'email' => 'admin@festmanager.org',
           'password' => bcrypt('1234'),
         ]);
 
         DB::table('fests')->insert([
-          'name'=>'KiteFest',
+          'name'=>'BeetleJuice',
           'fromDate'=>'2016-03-01',
           'toDate'=>'2016-03-05',
           'department'=>'Computer Science',
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         ]); //1
 
         DB::table('fests')->insert([
-          'name'=>'SampleFest',
+          'name'=>'Once',
           'fromDate'=>'2016-03-20',
           'toDate'=>'2016-03-23',
           'department'=>'Maths',
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
         ]);//2
 
         DB::table('fests')->insert([
-          'name'=>'AnotherFest',
+          'name'=>'Code On',
           'fromDate'=>'2016-03-07',
           'toDate'=>'2016-03-10',
           'department'=>'Electronics',
@@ -43,7 +43,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('fests')->insert([
-          'name'=>'RepublicDay',
+          'name'=>'Muse',
           'fromDate'=>'2016-03-05',
           'toDate'=>'2016-03-08',
           'department'=>'Computer Science',
@@ -51,7 +51,7 @@ class UserSeeder extends Seeder
         ]);//4
 
         DB::table('fests')->insert([
-          'name'=>'Sample Fest',
+          'name'=>'Robopocalypse',
           'fromDate'=>'2016-03-12',
           'toDate'=>'2016-03-15',
           'department'=>'Electronics',
@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('fests')->insert([
-          'name'=>'Film Fest',
+          'name'=>'Circuit Fest',
           'fromDate'=>'2016-03-01',
           'toDate'=>'2016-03-05',
           'department'=>'Computer Science',
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
         ]);//6
 
         DB::table('fests')->insert([
-          'name'=>'CampArt',
+          'name'=>'Robo War',
           'fromDate'=>'2016-04-01',
           'toDate'=>'2016-04-05',
           'department'=>'Computer Science',
@@ -75,26 +75,26 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('fests')->insert([
-          'name'=>'ArtsCon',
+          'name'=>'Imitation Game',
           'fromDate'=>'2016-03-10',
           'toDate'=>'2016-03-15',
           'department'=>'Computer Science',
           'imgUrl'=>'images/fests/8.jpg'
         ]);//8
-*/
+
         DB::table('events')->insert([
-          'name'=>'DumbC',
+          'name'=>'RetroManiac',
           'festid'=>'1',
           'details'=>''
         ]);
         DB::table('events')->insert([
-          'name'=>'Sample Event',
+          'name'=>'ElectroMusic',
           'festid'=>'1',
           'details'=>''
         ]);
 
         DB::table('events')->insert([
-          'name'=>'Believe',
+          'name'=>'Music Hunt',
           'festid'=>'1',
           'details'=>''
         ]);
