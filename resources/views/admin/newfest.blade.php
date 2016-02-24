@@ -1,3 +1,7 @@
+
+
+
+
 @extends('app')
 
 @section('meta')
@@ -11,23 +15,29 @@
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      <h1>Welcome</h1>
-      <h2>Fests</h2>
-      <table class="table table-hover">
-        <tr>
-          <th>Name</th>
-          <th>Department</th>
-          <th>Link</th>
-        </tr>
-        @foreach($fests as $fest)
-         <tr>
-           <td>{{$fest->name}}</td>
-           <td>{{$fest->department}}</td>
-           <td><a href="{{url('/admin/showfest/'.$fest->id)}}" class="btn">View Details</a></td>
-         </tr>
-        @endforeach
-      </table>
-      <a href="{{url('/admin/newfest')}}" class="btn">Add Fest</a>
+      {!! Form::open(['url'=>'/admin/newfest','files' => 'true']) !!}
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Name" name="name" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="Department" type="text" name="department" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="From" type="date" name="fromDate" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="To" type="date" name="toDate" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="Image" type="file" name="photo" required="">
+        </div>
+        <div class="form-group">
+          {!! Form::submit('Confirm', ['class' => 'btn']) !!}
+        </div>
+
+        @include('errors.errorlist',['err'=>$errors->cat])
+
+      {!! Form::close() !!}
     </div>
   </div>
 </div>

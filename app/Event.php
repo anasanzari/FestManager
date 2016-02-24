@@ -8,4 +8,8 @@ class Event extends Model {
 	public $timestamps = false;
 	protected $fillable = ['name','festid','details'];
 
+	public function fest(){
+		return $this->belongsto('App\Fest');
+	}
+
 }

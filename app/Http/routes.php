@@ -29,3 +29,8 @@ Route::get('/dashboard','UserController@index');
 Route::get('/fest/{id}','UserController@fest');
 
 Route::get('/admin/dashboard','AdminController@index');
+Route::get('/admin/newfest','AdminController@add_fest');
+Route::get('/admin/showfest/{id}','AdminController@showfest');
+Route::post('/admin/newfest','AdminController@festadd');
+Route::get('/admin/showfest/{id}/newevent','AdminController@add_event');
+Route::post('/admin/showfest/{id}/newevent','AdminController@eventadd');
