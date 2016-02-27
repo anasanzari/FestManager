@@ -27,15 +27,14 @@
                 <li>Department : {{$fest->department}}</li>
                 <li>Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
               </ul>
-              <h3>Events</h3>
-              @if(sizeof($fest->events)==0)
-                <p>No events are posted yet.</p>
+              <h3>{{$event->name}}</h3>
+              @if(($user)&&(empty($reg)))
+               <a class="btn btn-success" href="{{url('/register/event/'.$fest->id.'/'.$event->id)}}">Register</a>
+              @elseif(empty($reg))
+               Log In To Register
+              @else
+               You Have Already Registered For This Event
               @endif
-              <div class="list-group">
-                @foreach($fest->events as $key => $value)
-                  <a href="{{url('/fest/'.$fest->id.'/'.$value->id.'')}}" class="list-group-item">{{$value->name}}</a>
-                @endforeach
-              </div>
             </div>
           </div>
         </div>
