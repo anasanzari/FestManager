@@ -29,6 +29,8 @@ Route::get('/auth/logout','Auth\AuthController@logout');
 
 Route::get('/dashboard','UserController@index');
 Route::get('/fest/{id}','UserController@fest');
+Route::get('/fest/{id}/{event}','UserController@event');
+Route::get('/register/event/{id}/{event}','UserController@register');
 
 Route::get('/admin/dashboard','AdminController@index');
 Route::get('/admin/newfest','AdminController@add_fest');

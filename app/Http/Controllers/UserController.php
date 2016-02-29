@@ -6,8 +6,9 @@ use Auth;
 
 use App\Fest;
 use App\User;
-
 use Redirect;
+use App\Event;
+use App\Register;
 
 use Illuminate\Http\Request;
 
@@ -37,6 +38,23 @@ class UserController extends Controller {
 		return view('user.fest',['user'=>Auth::user(),'fest'=>$fest]);
 	}
 
+	public function event($id,$event){
+    $user = Auth::user();
+		$fest = Fest::find($id);
+		$reg = Register::where('userid',$user->id)->where('eventid',$event)->first();
+		$event = Event::find($event);
+		return view('user.event',['user'=>Auth::user(),'event'=>$event,'fest'=>$fest,'reg'=>$reg]);
+	}
+
+	public function register($id,$event){
+	 $user = Auth::user();
+ 	 $fest = Fest::find($id);
+	 $register = new Register;
+	 $register->eventid = $event;
+	 $register->userid = $user->id;
+	 $register->save();
+ 	 return view('user.fest',['user'=>$user,'fest'=>$fest]);
+  }
 
 
 }
