@@ -7,11 +7,22 @@ use Illuminate\Http\Request;
 use App\Fest;
 use App\Event;
 use Auth;
+use App\User;
+
+use Redirect;
 
 class AdminController extends Controller {
 
 	public function __construct(){
-		//$this->middleware('auth', ['except' => 'fest']);
+		$this->middleware('auth', []);
+		$user = Auth::user();
+
+		if($user&&$user->type==User::USER_ADMIN){
+
+		}else{
+				Redirect::to('notfound')->send();
+		}
+
 	}
 
 	public function index(){

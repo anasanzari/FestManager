@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     //
     public function __construct(){
-  		$this->middleware('guest', ['except' => 'logout']);
+  		$this->middleware('guest', ['except' => ['logout','notfound']]);
   	}
 
     function index(){
@@ -28,6 +28,10 @@ class PageController extends Controller
 
     function event(){
       return view('events.event');
+    }
+
+    function notfound(){
+      return view('notfound');
     }
 
 }

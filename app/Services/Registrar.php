@@ -36,22 +36,28 @@ class Registrar implements RegistrarContract {
 					'email' => $data['email'],
 					'password' => bcrypt($data['password']),
 					'phone' => $data['phone'],
-					'college' => $data['college']
+					'college' => $data['college'],
+					'type'=>User::USER_REGULAR
 			]);
 	}
 
 	public function redirectUrl($user){
-		if($user->email=="admin@festmanager.org"){
+
+		if($user->type==User::USER_ADMIN){
 			return '/admin/dashboard';
-		}else{
+		}else if($user->type==User::USER_DEPARTMENT){
+			return '/department/dashboard';
+		}else if($user->type==User::USER_REGULAR){
 			return '/dashboard';
+		}else{
+			//user shouldn't have this type in the first place.!!!
+			return '/notfound';
 		}
 	}
-	public function isAdmin($user){
+	/*public function isAdmin($user){
 		if($user->email=="admin@festmanager.org"){
 			return true;
 		}
 		return false;
-	}
-
+	}*/
 }

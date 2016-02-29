@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
           'name' => 'admin',
           'email' => 'admin@festmanager.org',
           'password' => bcrypt('1234'),
+          'type' => 1,
         ]);
 
         DB::table('fests')->insert([

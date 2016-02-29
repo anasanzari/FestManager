@@ -16,6 +16,8 @@
 Route::get('/','PageController@index');
 Route::get('/register','PageController@register');
 Route::get('/event','PageController@event');
+Route::get('/notfound','PageController@notfound');
+
 
 /* auth */
 Route::post('/auth/login','Auth\AuthController@login');
@@ -34,3 +36,7 @@ Route::get('/admin/showfest/{id}','AdminController@showfest');
 Route::post('/admin/newfest','AdminController@festadd');
 Route::get('/admin/showfest/{id}/newevent','AdminController@add_event');
 Route::post('/admin/showfest/{id}/newevent','AdminController@eventadd');
+
+
+/* department pages:: Put the add event, add fest routes in DepartmentController. Add AddUser functionality to AdminController */
+Route::get('/department/dashboard','DepartmentController@index');

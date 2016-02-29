@@ -8,6 +8,10 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
+	const USER_ADMIN = 1;
+	const USER_DEPARTMENT = 2;
+	const USER_REGULAR = 3;
+
 	use Authenticatable, CanResetPassword;
 
 	/**
@@ -22,7 +26,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['fname', 'lname', 'email', 'password','gender','type'];
+	protected $fillable = ['name', 'type', 'email', 'password','college','phone'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

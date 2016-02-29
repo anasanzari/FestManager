@@ -46,12 +46,7 @@ class Authenticate {
 				return redirect()->guest('auth/login');
 			}
 		}
-
-		$user = $this->auth->user();
-		if($this->registrar->isAdmin($user)){
-			return redirect('/admin/dashboard');
-		}
-
+		
 		return $next($request);
 	}
 
