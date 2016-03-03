@@ -28,17 +28,29 @@ Route::get('/auth/logout','Auth\AuthController@logout');
 /* user pages */
 
 Route::get('/dashboard','UserController@index');
+Route::get('/events','UserController@registeredevents');
 Route::get('/fest/{id}','UserController@fest');
 Route::get('/fest/{id}/{event}','UserController@event');
 Route::get('/register/event/{id}/{event}','UserController@register');
+Route::get('/deregister/event/{id}/{event}','UserController@deregister');
 
 Route::get('/admin/dashboard','AdminController@index');
-Route::get('/admin/newfest','AdminController@add_fest');
-Route::get('/admin/showfest/{id}','AdminController@showfest');
-Route::post('/admin/newfest','AdminController@festadd');
-Route::get('/admin/showfest/{id}/newevent','AdminController@add_event');
-Route::post('/admin/showfest/{id}/newevent','AdminController@eventadd');
+Route::get('/admin/newdep','AdminController@add_dep');
+Route::get('/admin/showdep/{id}','AdminController@showdep');
+Route::post('/admin/newdep','AdminController@depadd');
+
 
 
 /* department pages:: Put the add event, add fest routes in DepartmentController. Add AddUser functionality to AdminController */
 Route::get('/department/dashboard','DepartmentController@index');
+Route::get('/department/newfest','DepartmentController@add_fest');
+Route::post('/department/newfest','DepartmentController@festadd');
+Route::get('/department/showfest/{id}','DepartmentController@showfest');
+Route::get('/department/showfest/editphoto/{id}','DepartmentController@edit_photo');
+Route::post('/department/showfest/editphoto/{id}','DepartmentController@photoedit');
+Route::get('/department/editfest/{id}','DepartmentController@edit_fest');
+Route::post('/department/editfest/{id}','DepartmentController@festedit');
+Route::get('/department/showfest/{id}/newevent','DepartmentController@add_event');
+Route::post('/department/showfest/{id}/newevent','DepartmentController@eventadd');
+Route::get('/department/showfest/editevent/{id}','DepartmentController@edit_event');
+Route::post('/department/showfest/editevent/{id}','DepartmentController@eventedit');

@@ -15,21 +15,12 @@
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      {!! Form::open(['url'=>'/admin/newfest','files' => 'true']) !!}
+      {!! Form::open(['url'=>'/department/showfest/editevent/'.$event->id.'','files' => 'true']) !!}
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Name" name="name" required="">
+            <input class="form-control" type="text" placeholder="Name" name="name" value="{{$event->name}}" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="Department" type="text" name="department" required="">
-        </div>
-        <div class="form-group">
-           <input class="form-control" placeholder="From" type="date" name="fromDate" required="">
-        </div>
-        <div class="form-group">
-           <input class="form-control" placeholder="To" type="date" name="toDate" required="">
-        </div>
-        <div class="form-group">
-           <input class="form-control" placeholder="Image" type="file" name="photo" required="">
+           <textarea class="form-control" name="details" value="{{$event->name}}" required="">Details</textarea>
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

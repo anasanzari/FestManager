@@ -11,25 +11,22 @@
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      <h1>Welcome</h1>
-      <h2>Departments</h2>
+      <h1>Department Of {{ $user->name }}</h1>
+      <h2>Fests</h2>
       <table class="table table-hover">
         <tr>
           <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
           <th>Link</th>
         </tr>
-        @foreach($deps as $dep)
+        @foreach($fests as $fest)
          <tr>
-           <td>{{$dep->name}}</td>
-           <td>{{$dep->email}}</td>
-           <td>{{$dep->phone}}</td>
-           <td><a href="{{url('/admin/showdep/'.$dep->id)}}" class="btn">View Details</a></td>
+           <td>{{$fest->name}}</td>
+           <td><a href="{{url('/department/showfest/'.$fest->id)}}" class="btn">View Events</a>
+           <a href="{{url('/department/editfest/'.$fest->id)}}" class="btn">Edit</a></td>
          </tr>
         @endforeach
       </table>
-      <a href="{{url('/admin/newdep')}}" class="btn">Add a Department</a>
+      <a href="{{url('/department/newfest')}}" class="btn">Add Fest</a>
     </div>
   </div>
 </div>

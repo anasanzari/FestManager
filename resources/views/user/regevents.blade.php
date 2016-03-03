@@ -14,27 +14,33 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <h1>{{$fest->name}}</h1>
+        <h2>Events Registered For:</h2>
 
 
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-3">
-              <img src="{{url($fest->imgUrl)}}" class="img-responsive"/>
             </div>
             <div class="col-md-9 details">
-              <ul>
-                <li>Department : {{$fest->department}}</li>
-                <li>Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
-              </ul>
-              <h3>{{$event->name}}</h3>
-              @if(($user)&&(empty($reg)))
-               <a class="btn btn-success" href="{{url('/register/event/'.$fest->id.'/'.$event->id)}}">Register</a>
-              @elseif(empty($reg))
-               Log In To Register
-              @else
-               <a class="btn btn-success" href="{{url('/deregister/event/'.$fest->id.'/'.$event->id)}}">De-Register</a>
+              @if(empty($events))
+                <p>You have not registered for any event.</p>
               @endif
+              <div>
+                <table class="table table-striped">
+                  <tr>
+                    <th>Event</th>
+                    <th>Fest</th>
+                    <th>Link</th>
+                  </tr>
+                @foreach($events as $event)
+                <tr>
+                  <td>{{$event->name}}</td>
+                  <td>{{$event->fest->name}}</td>
+                  <td><a href="{{url('/deregister/event/'.$event->fest->id.'/'.$event->id.'')}}" class="list-group-item">De-Register</a></td>
+                </tr>
+                @endforeach
+              </table>
+              </div>
             </div>
           </div>
         </div>

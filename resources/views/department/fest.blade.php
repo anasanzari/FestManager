@@ -10,22 +10,28 @@
 
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
-    <div class="col-md-6 col-md-offset-2">
+    <div class="col-md-3 col-md-offset-1">
+      <img src="{{url($fest->imgUrl)}}" class="img-responsive"/>
+      <a href="{{url('/department/showfest/editphoto/'.$fest->id.'')}}" class="btn btn-link">Edit</a>
+    </div>
+    <div class="col-md-7">
       <h1>{{$fest->name}}</h1>
       <h2>Events</h2>
       <table class="table table-hover">
         <tr>
           <th>Name</th>
           <th>Details</th>
+          <th>Link</th>
         </tr>
         @foreach($events as $event)
          <tr>
            <td>{{$event->name}}</td>
            <td>{{$event->details}}</td>
+           <td><a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a></td>
          </tr>
         @endforeach
       </table>
-      <a href="{{url('/admin/showfest/'.$fest->id.'/newevent')}}" class="btn btn-primary">Add Event</a>
+      <a href="{{url('/department/showfest/'.$fest->id.'/newevent')}}" class="btn btn-primary">Add Event</a>
     </div>
   </div>
 </div>

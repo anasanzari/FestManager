@@ -1,7 +1,3 @@
-
-
-
-
 @extends('app')
 
 @section('meta')
@@ -15,20 +11,22 @@
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      {!! Form::open(['url'=>'/admin/showfest/'.$fest->id.'/newevent','files' => 'true']) !!}
-        <div class="form-group">
-            <input class="form-control" type="text" placeholder="Name" name="name" required="">
-        </div>
-        <div class="form-group">
-           <textarea class="form-control" name="details" required="">Details</textarea>
-        </div>
-        <div class="form-group">
-          {!! Form::submit('Confirm', ['class' => 'btn']) !!}
-        </div>
-
-        @include('errors.errorlist',['err'=>$errors->cat])
-
-      {!! Form::close() !!}
+      <h1>{{$dep->name}}</h1>
+      <h2>Fests</h2>
+      <table class="table table-hover">
+        <tr>
+          <th>Name</th>
+          <th>From</th>
+          <th>To</th>
+        </tr>
+        @foreach($fests as $fest)
+         <tr>
+           <td>{{$fest->name}}</td>
+           <td>{{$fest->fromDate}}</td>
+           <td>{{$fest->toDate}}</td>
+         </tr>
+        @endforeach
+      </table>
     </div>
   </div>
 </div>

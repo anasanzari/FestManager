@@ -9,7 +9,7 @@ class Event extends Model {
 	protected $fillable = ['name','festid','details'];
 
 	public function fest(){
-		return $this->belongsto('App\Fest');
+		return $this->belongsto('App\Fest','festid');
 	}
 
 }

@@ -33,6 +33,18 @@ class UserController extends Controller {
 
 	}
 
+	public function registeredevents(){
+
+    $user =Auth::user();
+		$eventid = Register::where('userid',$user->id)->lists('eventid');
+		$events = Event::whereIn('id',$eventid)->get();
+		$festid = Event::whereIn('id',$events->toArray())->lists('festid');
+		$fests = Fest::whereIn('id',$festid);
+
+		return view('user.regevents',['user'=>Auth::user(),'fests'=>$fests,'events'=>$events]);
+
+	}
+
 	public function fest($id){
 		$fest = Fest::with('events')->where('id',$id)->first();
 		return view('user.fest',['user'=>Auth::user(),'fest'=>$fest]);
@@ -53,7 +65,14 @@ class UserController extends Controller {
 	 $register->eventid = $event;
 	 $register->userid = $user->id;
 	 $register->save();
- 	 return view('user.fest',['user'=>$user,'fest'=>$fest]);
+ 	 return Redirect::back()->with(['user'=>$user,'fest'=>$fest]);
+  }
+	public function deregister($id,$event){
+	 $user = Auth::user();
+ 	 $fest = Fest::find($id);
+	 $reg = Register::find($user->id)->where('eventid',$event);
+	 $reg->delete();
+ 	 return Redirect::back()->with(['user'=>$user,'fest'=>$fest]);
   }
 
 

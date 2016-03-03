@@ -1,3 +1,7 @@
+
+
+
+
 @extends('app')
 
 @section('meta')
@@ -11,25 +15,23 @@
 <div class="container-fluid" style="min-height:600px;padding-top:150px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
-      <h1>Welcome</h1>
-      <h2>Departments</h2>
-      <table class="table table-hover">
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Link</th>
-        </tr>
-        @foreach($deps as $dep)
-         <tr>
-           <td>{{$dep->name}}</td>
-           <td>{{$dep->email}}</td>
-           <td>{{$dep->phone}}</td>
-           <td><a href="{{url('/admin/showdep/'.$dep->id)}}" class="btn">View Details</a></td>
-         </tr>
-        @endforeach
-      </table>
-      <a href="{{url('/admin/newdep')}}" class="btn">Add a Department</a>
+      {!! Form::open(['url'=>'/department/editfest/'.$fest->id.'','files' => 'true']) !!}
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Name" name="name" value="{{$fest->name}}" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="From" type="date" name="fromDate" value="{{$fest->fromDate}}" required="">
+        </div>
+        <div class="form-group">
+           <input class="form-control" placeholder="To" type="date" name="toDate" value="{{$fest->toDate}}" required="">
+        </div>
+        <div class="form-group">
+          {!! Form::submit('Confirm', ['class' => 'btn']) !!}
+        </div>
+
+        @include('errors.errorlist',['err'=>$errors->cat])
+
+      {!! Form::close() !!}
     </div>
   </div>
 </div>
