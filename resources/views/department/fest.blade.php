@@ -21,13 +21,14 @@
         <tr>
           <th>Name</th>
           <th>Details</th>
-          <th>Link</th>
+          <th>Links</th>
         </tr>
         @foreach($events as $event)
          <tr>
            <td>{{$event->name}}</td>
            <td>{{$event->details}}</td>
-           <td><a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a></td>
+           <td><a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a>
+           <a href="{{url('/department/showfest/listeventreg/'.$event->id.'')}}" class="btn btn-link">Registrations</a></td>
          </tr>
         @endforeach
       </table>

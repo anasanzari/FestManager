@@ -7,6 +7,7 @@ use Validator;
 use App\Fest;
 use App\User;
 use App\Event;
+use App\Register;
 use File;
 
 use Redirect;
@@ -172,6 +173,13 @@ class DepartmentController extends Controller {
 
 		return redirect('department/showfest/'.$id.'');
 
+	}
+
+	public function list_reg($id){
+		$list = Register::where('eventid',$id)->get();
+		$event = Event::find($id);
+		$fest = Fest::find($event->festid);
+		return view('department.list',['user'=>Auth::user(),'list'=>$list,'event'=>$event,'fest'=>$fest]);
 	}
 
 }
