@@ -10,6 +10,7 @@ use Redirect;
 use App\Event;
 use App\Register;
 
+
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
@@ -45,18 +46,9 @@ class UserController extends Controller {
 
 	}
 
-	public function fest($id){
-		$fest = Fest::with('events')->where('id',$id)->first();
-		return view('user.fest',['user'=>Auth::user(),'fest'=>$fest]);
-	}
 
-	public function event($id,$event){
-    $user = Auth::user();
-		$fest = Fest::find($id);
-		$reg = Register::where('userid',$user->id)->where('eventid',$event)->first();
-		$event = Event::find($event);
-		return view('user.event',['user'=>Auth::user(),'event'=>$event,'fest'=>$fest,'reg'=>$reg]);
-	}
+
+
 
 	public function register($id,$event){
 	 $user = Auth::user();

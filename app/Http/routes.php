@@ -29,8 +29,10 @@ Route::get('/auth/logout','Auth\AuthController@logout');
 
 Route::get('/dashboard','UserController@index');
 Route::get('/events','UserController@registeredevents');
-Route::get('/fest/{id}','UserController@fest');
-Route::get('/fest/{id}/{event}','UserController@event');
+
+Route::get('/fest/{id}','PageController@fest');
+Route::get('/fest/{id}/{event}','PageController@showevent');
+
 Route::get('/register/event/{id}/{event}','UserController@register');
 Route::get('/deregister/event/{id}/{event}','UserController@deregister');
 

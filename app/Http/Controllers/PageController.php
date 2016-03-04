@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Fest;
+use Auth;
+use App\Event;
 
 class PageController extends Controller
 {
@@ -32,6 +34,22 @@ class PageController extends Controller
 
     function notfound(){
       return view('notfound');
+    }
+
+    public function fest($id){
+      $fest = Fest::with('events')->where('id',$id)->first();
+      return view('user.fest',['user'=>Auth::user(),'fest'=>$fest]);
+    }
+
+    public function showevent($id,$event){
+      $user = Auth::user();
+      $reg = NULL;
+      if($user){
+        $reg = Register::where('userid',$user->id)->where('eventid',$event)->first();
+      }
+      $fest = Fest::find($id);
+      $event = Event::find($event);
+      return view('user.event',['user'=>Auth::user(),'event'=>$event,'fest'=>$fest,'reg'=>$reg]);
     }
 
 }
