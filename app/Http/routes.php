@@ -51,6 +51,7 @@ Route::get('/department/showfest/{id}','DepartmentController@showfest');
 Route::get('/department/showfest/editphoto/{id}','DepartmentController@edit_photo');
 Route::post('/department/showfest/editphoto/{id}','DepartmentController@photoedit');
 Route::get('/department/editfest/{id}','DepartmentController@edit_fest');
+Route::get('/department/showfest/listeventreg/{id}','DepartmentController@list_reg');
 Route::post('/department/editfest/{id}','DepartmentController@festedit');
 Route::get('/department/showfest/{id}/newevent','DepartmentController@add_event');
 Route::post('/department/showfest/{id}/newevent','DepartmentController@eventadd');

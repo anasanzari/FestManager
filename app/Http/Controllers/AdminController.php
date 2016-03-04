@@ -51,9 +51,11 @@ class AdminController extends Controller {
 
   $input = $request->all();
 	$input['type'] = 2;
+	$input['college']="";
 	$input['password'] = bcrypt($input['password']);
-	User::create($input);
-	return view('admin.department',['user'=>Auth::user()]);
+	$dep = User::create($input);
+	$fests = Fest::where('department',$dep->name)->get();
+	return view('admin.department',['user'=>Auth::user(),'dep'=>$dep,'fests'=>$fests]);
 
  }
 

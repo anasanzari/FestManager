@@ -8,5 +8,9 @@ class Register extends Model {
 	public $timestamps = true;
 	protected $fillable = ['userid','eventid'];
 
+	public function user(){
+		return $this->belongsto('App\User','userid');
+	}
+
 
 }

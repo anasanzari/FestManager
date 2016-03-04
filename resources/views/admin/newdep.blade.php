@@ -20,9 +20,6 @@
           <input class="form-control" type="text" placeholder="Name" name="name" required="">
       </div>
       <div class="form-group">
-          <input class="form-control" type="text" placeholder="College" name="college" required="">
-      </div>
-      <div class="form-group">
           <input class="form-control" type="text" placeholder="Phone" name="phone" required="">
       </div>
       <div class="form-group">
