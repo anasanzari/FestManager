@@ -41,6 +41,11 @@ class DepartmentController extends Controller {
 
   }
 
+	public function showDetails($id){
+		$event = Event::find($id);
+  	return view('department.details',['user'=>Auth::user(),'event'=>$event]);
+	}
+
 	public function showfest($id){
 
    $fest = Fest::find($id);
@@ -65,7 +70,7 @@ class DepartmentController extends Controller {
 
 
 		$fest = Fest::create($request->all());
-		$fest->imgUrl = 'images/fests'.$fest->id.".jpg";
+		$fest->imgUrl = 'images/fests/'.$fest->id.".jpg";
 		$fest->department = Auth::user()->name;
 		$fest->save();
 

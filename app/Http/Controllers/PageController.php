@@ -10,12 +10,13 @@ use App\Http\Controllers\Controller;
 use App\Fest;
 use Auth;
 use App\Event;
+use App\Register;
 
 class PageController extends Controller
 {
     //
     public function __construct(){
-  		$this->middleware('guest', ['except' => ['logout','notfound']]);
+  		$this->middleware('guest', ['except' => ['logout','notfound','fest','showevent']]);
   	}
 
     function index(){

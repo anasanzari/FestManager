@@ -20,13 +20,14 @@
             <input class="form-control" type="text" placeholder="Name" name="name" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="From" type="date" name="fromDate" required="">
+           <input class="form-control" placeholder="From (yyyy-mm-dd)" type="date" name="fromDate" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="To" type="date" name="toDate" required="">
+           <input class="form-control" placeholder="To (yyyy-mm-dd)" type="date" name="toDate" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="Image" type="file" name="photo" required="">
+          <label>Upload Event Photo</label>
+           <input placeholder="Image" type="file" name="photo" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

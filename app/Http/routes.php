@@ -57,3 +57,5 @@ Route::get('/department/showfest/{id}/newevent','DepartmentController@add_event'
 Route::post('/department/showfest/{id}/newevent','DepartmentController@eventadd');
 Route::get('/department/showfest/editevent/{id}','DepartmentController@edit_event');
 Route::post('/department/showfest/editevent/{id}','DepartmentController@eventedit');
+
+Route::get('/department/showfest/show/{id}','DepartmentController@showDetails');

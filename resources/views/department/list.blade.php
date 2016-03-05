@@ -20,17 +20,21 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-3">
-              <h3>Other Events</h3>
-              <div class="list-group">
-                @foreach($fest->events as $even)
-                  @if($even->id != $event->id)
-                  <a href="{{url('/department/showfest/listeventreg/'.$even->id.'')}}" class="list-group-item">{{$even->name}}</a>
-                  @endif
-                @endforeach
-              </div>
+              @if(sizeof($fest->events)>1)
+                <h3>Other Events</h3>
+                <div class="list-group">
+                  @foreach($fest->events as $even)
+                    @if($even->id != $event->id)
+                    <a href="{{url('/department/showfest/listeventreg/'.$even->id.'')}}" class="list-group-item">{{$even->name}}</a>
+                    @endif
+                  @endforeach
+                </div>
+              @endif
+
             </div>
             <div class="col-md-9 details">
               <h3>{{$event->name}}</h3>
+              @if(sizeof($list)>0)
               <table class="table table-striped">
                 <tr>
                   <th>Name</th>
@@ -47,6 +51,10 @@
                 </tr>
                 @endforeach
               </table>
+              @else
+                <p>No Registrations found.</p>
+              @endif
+
             </div>
           </div>
         </div>

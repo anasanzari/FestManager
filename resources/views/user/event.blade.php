@@ -14,20 +14,15 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <h1>{{$fest->name}}</h1>
-
-
+        <h1>{{$event->name}}</h1>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-3">
-              <img src="{{url($fest->imgUrl)}}" class="img-responsive"/>
-            </div>
-            <div class="col-md-9 details">
-              <ul>
-                <li>Department : {{$fest->department}}</li>
-                <li>Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
+            <div class="col-md-3 eventdetails">
+              <ul class="list-group">
+                <li class="list-group-item">Fest :{{$fest->name}} </li>
+                <li class="list-group-item">Department : {{$fest->department}}</li>
+                <li class="list-group-item">Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
               </ul>
-              <h3>{{$event->name}}</h3>
               @if(($user)&&(empty($reg)))
                <a class="btn btn-success" href="{{url('/register/event/'.$fest->id.'/'.$event->id)}}">Register</a>
               @elseif(empty($reg))
@@ -35,6 +30,11 @@
               @else
                <a class="btn btn-success" href="{{url('/deregister/event/'.$fest->id.'/'.$event->id)}}">De-Register</a>
               @endif
+            </div>
+            <div class="col-md-9 details">
+              <div class="preview">
+                {!!$event->details!!}
+              </div>
             </div>
           </div>
         </div>
