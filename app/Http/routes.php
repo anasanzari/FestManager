@@ -37,6 +37,7 @@ Route::get('/deregister/event/{id}/{event}','UserController@deregister');
 Route::get('/admin/dashboard','AdminController@index');
 Route::get('/admin/newdep','AdminController@add_dep');
 Route::get('/admin/showdep/{id}','AdminController@showdep');
+Route::get('/admin/deletedep/{id}','AdminController@deletedep');
 Route::post('/admin/newdep','AdminController@depadd');
 
 
@@ -49,7 +50,9 @@ Route::get('/department/showfest/{id}','DepartmentController@showfest');
 Route::get('/department/showfest/editphoto/{id}','DepartmentController@edit_photo');
 Route::post('/department/showfest/editphoto/{id}','DepartmentController@photoedit');
 Route::get('/department/editfest/{id}','DepartmentController@edit_fest');
+Route::get('/department/deletefest/{id}','DepartmentController@delete_fest');
 Route::get('/department/showfest/listeventreg/{id}','DepartmentController@list_reg');
+Route::get('/department/showfest/deleteevent/{id}','DepartmentController@delete_event');
 Route::post('/department/editfest/{id}','DepartmentController@festedit');
 Route::get('/department/showfest/{id}/newevent','DepartmentController@add_event');
 Route::post('/department/showfest/{id}/newevent','DepartmentController@eventadd');

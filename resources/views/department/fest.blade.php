@@ -28,7 +28,8 @@
            <td>{{$event->name}}</td>
            <td>{{$event->details}}</td>
            <td><a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a>
-           <a href="{{url('/department/showfest/listeventreg/'.$event->id.'')}}" class="btn btn-link">Registrations</a></td>
+             <a href="{{url('/department/showfest/listeventreg/'.$event->id.'')}}" class="btn btn-link">Registrations</a>
+           <a href="{{url('/department/showfest/deleteevent/'.$event->id.'')}}" class="btn btn-link">Delete</a></td>
          </tr>
         @endforeach
       </table>

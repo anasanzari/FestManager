@@ -59,6 +59,12 @@ class AdminController extends Controller {
 
  }
 
+ public function deletedep($id){
+	 User::find($id)->delete();
+	 $deps = User::where('type',2)->get();
+	 return view('admin.index',['user'=>Auth::user(),'deps'=>$deps]); 
+ }
+
 
 
 }

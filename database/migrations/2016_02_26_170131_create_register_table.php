@@ -15,9 +15,11 @@ class CreateRegisterTable extends Migration {
 		Schema::create('register', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('userid');
-			$table->integer('eventid');
+			$table->integer('userid')->unsigned();
+			$table->integer('eventid')->unsigned();
 			$table->timestamps();
+			$table->foreign('eventid')->references('id')->on('events')->onDelete('cascade');
+			$table->foreign('userid')->references('id')->on('users')->onDelete('cascade');
 		});
 	}
 

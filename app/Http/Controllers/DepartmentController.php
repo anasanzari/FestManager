@@ -182,4 +182,21 @@ class DepartmentController extends Controller {
 		return view('department.list',['user'=>Auth::user(),'list'=>$list,'event'=>$event,'fest'=>$fest]);
 	}
 
+	public function delete_fest($id){
+		$fest = Fest::find($id);
+		File::delete($fest->imgUrl);
+		$fest->delete();
+		$dep = Auth::user()->name;
+		$fests = Fest::where('department',$dep)->get();
+		return view('department.index',['user'=>Auth::user(),'fests'=>$fests]);
+
+	}
+
+	public function delete_event($id){
+		$event = Event::find($id);
+		$event->delete();
+ 	 return redirect('department/showfest/'.$event->festid.'');
+
+	}
+
 }

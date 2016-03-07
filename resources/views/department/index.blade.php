@@ -22,7 +22,8 @@
          <tr>
            <td>{{$fest->name}}</td>
            <td><a href="{{url('/department/showfest/'.$fest->id)}}" class="btn">View Events</a>
-           <a href="{{url('/department/editfest/'.$fest->id)}}" class="btn">Edit</a></td>
+             <a href="{{url('/department/editfest/'.$fest->id)}}" class="btn">Edit</a>
+           <a href="{{url('/department/deletefest/'.$fest->id)}}" class="btn">Delete</a></td>
          </tr>
         @endforeach
       </table>

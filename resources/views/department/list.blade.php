@@ -6,7 +6,7 @@
 
 @section('content')
 
-@include('includes.nav')
+@include('includes.admin_nav')
 
 <div class="user_fest">
 

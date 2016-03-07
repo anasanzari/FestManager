@@ -25,7 +25,8 @@
            <td>{{$dep->name}}</td>
            <td>{{$dep->email}}</td>
            <td>{{$dep->phone}}</td>
-           <td><a href="{{url('/admin/showdep/'.$dep->id)}}" class="btn">View Details</a></td>
+           <td><a href="{{url('/admin/showdep/'.$dep->id)}}" class="btn">View Details</a>
+           <a href="{{url('/admin/deletedep/'.$dep->id)}}" class="btn">Delete</a></td>
          </tr>
         @endforeach
       </table>
