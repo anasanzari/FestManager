@@ -17,22 +17,32 @@
     <div class="col-md-7">
       <h1>{{$fest->name}}</h1>
       <h2>Events</h2>
-      <table class="table table-hover">
-        <tr>
-          <th>Name</th>
-          <th>Details</th>
-          <th>Links</th>
-        </tr>
-        @foreach($events as $event)
-         <tr>
-           <td>{{$event->name}}</td>
-           <td>{{$event->details}}</td>
-           <td><a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a>
+
+      @if(sizeof($events)>0)
+
+        <table class="table table-hover">
+          <tr>
+            <th>Name</th>
+            <th>Links</th>
+          </tr>
+          @foreach($events as $event)
+           <tr>
+             <td>{{$event->name}}</td>
+             <td>
+               <a href="{{url('/department/showfest/show/'.$event->id.'')}}" class="btn btn-link">Event Details</a>
+               <a href="{{url('/department/showfest/editevent/'.$event->id.'')}}" class="btn btn-link">Edit</a>
              <a href="{{url('/department/showfest/listeventreg/'.$event->id.'')}}" class="btn btn-link">Registrations</a>
-           <a href="{{url('/department/showfest/deleteevent/'.$event->id.'')}}" class="btn btn-link">Delete</a></td>
-         </tr>
-        @endforeach
-      </table>
+             <a href="{{url('/department/showfest/deleteevent/'.$event->id.'')}}" class="btn btn-link">Delete</a></td>
+           </tr>
+          @endforeach
+        </table>
+
+      @else
+
+      <p>No events are added yet.</p>
+
+      @endif
+
       <a href="{{url('/department/showfest/'.$fest->id.'/newevent')}}" class="btn btn-primary">Add Event</a>
     </div>
   </div>
@@ -53,29 +63,5 @@
 @endsection
 
 @section('script')
-{!! Html::script('js/owl.carousel.js') !!}
-<script>
 
-$(document).ready(function() {
-
-      $("#owl-demo").owlCarousel({
-
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-          items : 4,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3]
-
-      });
-
-      $(".hash").click(function(event){
-         // alert("hey");
-         event.preventDefault();
-         $('html,body').stop().animate({scrollTop:$(this.hash).offset().top},1000);
-      });
-
-
-    });
-
-</script>
 @endsection

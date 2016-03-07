@@ -1,3 +1,4 @@
+<?php use Carbon\Carbon; ?>
 @extends('app')
 
 @section('meta')
@@ -22,8 +23,8 @@
         @foreach($fests as $fest)
          <tr>
            <td>{{$fest->name}}</td>
-           <td>{{$fest->fromDate}}</td>
-           <td>{{$fest->toDate}}</td>
+           <td>{{Carbon::parse($fest->fromDate)->toFormattedDateString()}}</td>
+           <td>{{Carbon::parse($fest->toDate)->toFormattedDateString()}}</td>
          </tr>
         @endforeach
       </table>
@@ -51,24 +52,7 @@
 
 $(document).ready(function() {
 
-      $("#owl-demo").owlCarousel({
-
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-          items : 4,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3]
-
-      });
-
-      $(".hash").click(function(event){
-         // alert("hey");
-         event.preventDefault();
-         $('html,body').stop().animate({scrollTop:$(this.hash).offset().top},1000);
-      });
-
-
-    });
+});
 
 </script>
 @endsection

@@ -14,33 +14,31 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
 
-        <h2>Events Registered For:</h2>
-
-
+        <h2>Registered Events</h2>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-9 details">
-              @if(empty($events))
-                <p>You have not registered for any event.</p>
-              @endif
-              <div>
-                <table class="table table-striped">
+            <div class="col-md-8 col-md-offset-2 details">
+              @if(sizeof($events)==0)
+                <p class="alert alert-danger center">You have not registered for any event.</p>
+              @else
+                <div>
+                  <table class="table table-striped">
+                    <tr>
+                      <th>Event</th>
+                      <th>Fest</th>
+                      <th>Link</th>
+                    </tr>
+                  @foreach($events as $event)
                   <tr>
-                    <th>Event</th>
-                    <th>Fest</th>
-                    <th>Link</th>
+                    <td>{{$event->name}}</td>
+                    <td>{{$event->fest->name}}</td>
+                    <td><a href="{{url('/deregister/event/'.$event->fest->id.'/'.$event->id.'')}}" class="list-group-item">De-Register</a></td>
                   </tr>
-                @foreach($events as $event)
-                <tr>
-                  <td>{{$event->name}}</td>
-                  <td>{{$event->fest->name}}</td>
-                  <td><a href="{{url('/deregister/event/'.$event->fest->id.'/'.$event->id.'')}}" class="list-group-item">De-Register</a></td>
-                </tr>
-                @endforeach
-              </table>
-              </div>
+                  @endforeach
+                </table>
+                </div>
+              @endif
+
             </div>
           </div>
         </div>

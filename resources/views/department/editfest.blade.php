@@ -1,7 +1,3 @@
-
-
-
-
 @extends('app')
 
 @section('meta')
@@ -20,10 +16,10 @@
             <input class="form-control" type="text" placeholder="Name" name="name" value="{{$fest->name}}" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="From" type="date" name="fromDate" value="{{$fest->fromDate}}" required="">
+           <input class="form-control" placeholder="From" type="date" name="fromDate" value="{{$fest->fromDate->toDateString()}}" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="To" type="date" name="toDate" value="{{$fest->toDate}}" required="">
+           <input class="form-control" placeholder="To" type="date" name="toDate" value="{{$fest->toDate->toDateString()}}" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

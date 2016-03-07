@@ -15,7 +15,8 @@
     <div class="col-md-6 col-md-offset-2">
       {!! Form::open(['url'=>'/department/showfest/editphoto/'.$fest->id.'','files' => 'true']) !!}
         <div class="form-group">
-           <input class="form-control" placeholder="Image" type="file" name="photo" required="">
+          <label>Upload New Photo</label>
+           <input  placeholder="Image" type="file" name="photo" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

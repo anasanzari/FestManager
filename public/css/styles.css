@@ -5955,6 +5955,111 @@ button.close {
   min-height: 150px;
   background: url(../images/AjaxLoader.gif) no-repeat center center; }
 
+.glyphicon-button1:before {
+  content: "\e180 1"; }
+
+.glyphicon-button2:before {
+  content: "\e180 2"; }
+
+.glyphicon-button3:before {
+  content: "\e180 3"; }
+
+.glyphicon-button4:before {
+  content: "\e180 4"; }
+
+.glyphicon-button5:before {
+  content: "\e055"; }
+
+.glyphicon-button6:before {
+  content: ""; }
+
+.glyphicon-button7:before {
+  content: ""; }
+
+.glyphicon-button8:before {
+  content: ""; }
+
+.glyphicon-button9:before {
+  content: ""; }
+
+.glyphicon-button10:before {
+  content: ""; }
+
+.glyphicon-button11:before {
+  content: ""; }
+
+.glyphicon-button12:before {
+  content: ""; }
+
+.glyphicon-button13:before {
+  content: ""; }
+
+.glyphicon-button14:before {
+  content: ""; }
+
+.glyphicon-button15:before {
+  content: ""; }
+
+.markItUp * {
+  margin: 0px;
+  padding: 0px;
+  outline: none; }
+
+.markItUp a:link,
+.markItUp a:visited {
+  color: #000;
+  text-decoration: none; }
+
+.markItUp {
+  margin: 5px 0 5px 0;
+  border: 1px solid #FFFFF; }
+
+.markItUpContainer {
+  padding: 5px 5px 2px 5px;
+  font: 11px Verdana, Arial, Helvetica, sans-serif; }
+
+.markItUpEditor {
+  padding: 3px;
+  line-height: 18px;
+  overflow: auto; }
+
+.markItUpPreviewFrame {
+  overflow: auto;
+  height: 375px;
+  margin: 5px 0;
+  margin-top: 44px;
+  border: none;
+  width: 100%; }
+
+.markItUpFooter {
+  width: 100%;
+  cursor: n-resize; }
+
+.markItUpResizeHandle {
+  overflow: hidden;
+  width: 22px;
+  height: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(images/handle.png);
+  cursor: n-resize; }
+
+/***************************************************************************************/
+/* first row of buttons */
+.markItUpHeader {
+  margin-bottom: 5px; }
+
+.markItUpHeader ul li {
+  list-style: none;
+  display: inline-block; }
+
+.markItUpHeader ul a {
+  display: block;
+  background-repeat: no-repeat;
+  padding: 5px;
+  margin: 0px; }
+
+/****************************/
 @font-face {
   font-family: normal;
   src: url("../fonts/weblysleek.ttf"); }
@@ -6192,5 +6297,37 @@ nav.navbar {
     margin-bottom: 25px; }
   .user_fest .details {
     text-align: left; }
+
+.pad {
+  padding-top: 60px; }
+
+.preview {
+  padding: 50px 25px;
+  text-align: center; }
+  .preview img {
+    display: inline-block;
+    max-width: 100%;
+    margin: 20px 0px; }
+  .preview h1, .preview h2, .preview h3, .preview h4 {
+    text-align: left; }
+  .preview h1 {
+    font-size: 4rem; }
+  .preview h2 {
+    font-size: 3.5rem; }
+  .preview h3 {
+    font-size: 3rem; }
+  .preview h4 {
+    font-size: 2.5rem; }
+  .preview p {
+    text-align: justify;
+    font-size: 2rem; }
+  .preview ul {
+    text-align: left; }
+
+.eventdetails ul {
+  padding-top: 80px; }
+
+.center {
+  text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
