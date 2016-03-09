@@ -13,7 +13,8 @@
     <div class="col-md-8 col-md-offset-2">
     <div class="preview">
       <h1>{{$event->name}}</h1>
-      {!! $event->details !!}
+      <p>Venue : {{ $event->venue }}<br>Date : {{ $event->date }}</p>
+        {!! $event->details !!}
     </div>
     </div>
   </div>

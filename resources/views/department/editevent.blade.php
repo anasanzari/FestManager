@@ -18,12 +18,28 @@
       <h3>Edit Event</h3>
       {!! Form::open(['url'=>'/department/showfest/editevent/'.$event->id.'','files' => 'true']) !!}
         <div class="form-group">
+          <label>Event Details</label>
             <input class="form-control" type="text" placeholder="Name" name="name" value="{{$event->name}}" required="">
         </div>
         <div class="form-group">
           <label>Event Details</label>
           <textarea class="form-control" rows="15" id="text" name="details" required="">{{$event->details}}</textarea>
-
+        </div>
+        <div class="form-group">
+            <label>Event Venue</label>
+            <input class="form-control" type="text" value="{{$event->venue}}" name="venue" required="">
+        </div>
+        <div class="form-group">
+          <label>Event Date</label>
+            <input class="form-control" type="text" name="date" value="{{$event->date}}" required="">
+        </div>
+        <div class="form-group">
+          <label>Event Manager</label>
+            <input class="form-control" type="text" name="manager" value="{{$event->manager}}" required="">
+        </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+            <input class="form-control" type="text" name="contact" value="{{$event->contact}}" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

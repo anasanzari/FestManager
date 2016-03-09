@@ -11,6 +11,7 @@ use App\Fest;
 use Auth;
 use App\Event;
 use App\Register;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -20,7 +21,7 @@ class PageController extends Controller
   	}
 
     function index(){
-      $fests = Fest::all();
+      $fests = Fest::where('fromDate','>=',Carbon::now())->get();
       return view('index',['fests'=>$fests]);
     }
 

@@ -18,11 +18,28 @@
       <h2>Add Event</h2>
       {!! Form::open(['url'=>'/department/showfest/'.$fest->id.'/newevent','files' => 'true']) !!}
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Name" name="name" required="">
+            <label>Event Name</label>
+            <input class="form-control" type="text" name="name" required="">
         </div>
         <div class="form-group">
             <label>Event Details</label>
            <textarea class="form-control" rows="15" id="text" name="details" required=""></textarea>
+        </div>
+        <div class="form-group">
+            <label>Event Venue</label>
+            <input class="form-control" type="text" value="Yet To Be Confirmed" name="venue" required="">
+        </div>
+        <div class="form-group">
+          <label>Event Date</label>
+            <input class="form-control" type="text" name="date" required="">
+        </div>
+        <div class="form-group">
+          <label>Event Manager</label>
+            <input class="form-control" type="text" name="manager" required="">
+        </div>
+        <div class="form-group">
+          <label>Contact Number</label>
+            <input class="form-control" type="text" name="contact" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}
