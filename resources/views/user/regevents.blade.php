@@ -32,7 +32,7 @@
                   <tr>
                     <td>{{$event->name}}</td>
                     <td>{{$event->fest->name}}</td>
-                    <td><a href="{{url('/deregister/event/'.$event->fest->id.'/'.$event->id.'')}}" class="list-group-item">De-Register</a></td>
+                    <td><a href="{{url('/deregister/event/'.$event->fest->id.'/'.$event->id.'')}}" class="btn btn-success">De-Register</a></td>
                   </tr>
                   @endforeach
                 </table>

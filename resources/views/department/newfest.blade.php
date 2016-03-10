@@ -16,14 +16,18 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
       {!! Form::open(['url'=>'/department/newfest','files' => 'true']) !!}
+      <h3>Add Fest</h3>
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Name" name="name" required="">
+          <label>Name</label>
+            <input class="form-control" type="text"  name="name" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="From (yyyy-mm-dd)" type="date" name="fromDate" required="">
+          <label>From Date</label>
+           <input class="form-control datepicker" type="date" name="fromDate" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="To (yyyy-mm-dd)" type="date" name="toDate" required="">
+          <label>To Date</label>
+           <input class="form-control datepicker" type="date" name="toDate" required="">
         </div>
         <div class="form-group">
           <label>Upload Event Photo</label>
@@ -58,26 +62,10 @@
 {!! Html::script('js/owl.carousel.js') !!}
 <script>
 
-$(document).ready(function() {
-
-      $("#owl-demo").owlCarousel({
-
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-          items : 4,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3]
-
-      });
-
-      $(".hash").click(function(event){
-         // alert("hey");
-         event.preventDefault();
-         $('html,body').stop().animate({scrollTop:$(this.hash).offset().top},1000);
-      });
-
-
-    });
+$('.datepicker').datepicker({
+  format: 'yyyy-mm-dd',
+  startDate: '-3d'
+});
 
 </script>
 @endsection

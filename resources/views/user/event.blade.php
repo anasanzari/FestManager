@@ -22,6 +22,9 @@
                 <li class="list-group-item">Fest :{{$fest->name}} </li>
                 <li class="list-group-item">Department : {{$fest->department}}</li>
                 <li class="list-group-item">Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
+                <li class="list-group-item">Venue: {{$fest->venue}}</li>
+                <li class="list-group-item">Manager: {{$fest->manager}}</li>
+                <li class="list-group-item">Contact: {{$fest->contact}}</li>
               </ul>
               @if(($user)&&(empty($reg)))
                <a class="btn btn-success" href="{{url('/register/event/'.$fest->id.'/'.$event->id)}}">Register</a>

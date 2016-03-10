@@ -8,18 +8,22 @@
 
 @include('includes.admin_nav')
 
-<div class="container-fluid" style="min-height:600px;padding-top:150px;">
+<div class="container-fluid" style="min-height:600px;padding-top:70px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-2">
+      <h3>Edit Fest</h3>
       {!! Form::open(['url'=>'/department/editfest/'.$fest->id.'','files' => 'true']) !!}
         <div class="form-group">
-            <input class="form-control" type="text" placeholder="Name" name="name" value="{{$fest->name}}" required="">
+            <label>Name</label>
+            <input class="form-control" type="text" name="name" value="{{$fest->name}}" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="From" type="date" name="fromDate" value="{{$fest->fromDate->toDateString()}}" required="">
+          <label>From Date</label>
+           <input class="form-control datepicker" type="date" name="fromDate" value="{{$fest->fromDate->toDateString()}}" required="">
         </div>
         <div class="form-group">
-           <input class="form-control" placeholder="To" type="date" name="toDate" value="{{$fest->toDate->toDateString()}}" required="">
+          <label>To Date</label>
+           <input class="form-control datepicker"  type="date" name="toDate" value="{{$fest->toDate->toDateString()}}" required="">
         </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}
@@ -50,26 +54,10 @@
 {!! Html::script('js/owl.carousel.js') !!}
 <script>
 
-$(document).ready(function() {
-
-      $("#owl-demo").owlCarousel({
-
-          autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-          items : 4,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3]
-
-      });
-
-      $(".hash").click(function(event){
-         // alert("hey");
-         event.preventDefault();
-         $('html,body').stop().animate({scrollTop:$(this.hash).offset().top},1000);
-      });
-
-
-    });
+$('.datepicker').datepicker({
+  format: 'yyyy-mm-dd',
+  startDate: '-3d'
+});
 
 </script>
 @endsection
