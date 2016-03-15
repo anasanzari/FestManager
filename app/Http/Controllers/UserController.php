@@ -9,6 +9,7 @@ use App\User;
 use Redirect;
 use App\Event;
 use App\Register;
+use Carbon\Carbon;
 
 
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class UserController extends Controller {
 
 	public function index(){
 
-		$fests = Fest::all();
+		$fests = Fest::where('fromDate','>=',Carbon::now())->get();
 
 		return view('user.index',['user'=>Auth::user(),'fests'=>$fests]);
 
