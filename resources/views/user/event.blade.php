@@ -22,14 +22,14 @@
                 <li class="list-group-item">Fest :{{$fest->name}} </li>
                 <li class="list-group-item">Department : {{$fest->department}}</li>
                 <li class="list-group-item">Date: {{$fest->fromDate->format('jS F, Y')}} to {{$fest->toDate->format('jS F, Y')}}</li>
-                <li class="list-group-item">Venue: {{$fest->venue}}</li>
-                <li class="list-group-item">Manager: {{$fest->manager}}</li>
-                <li class="list-group-item">Contact: {{$fest->contact}}</li>
+                <li class="list-group-item">Venue: {{$event->venue}}</li>
+                <li class="list-group-item">Manager: {{$event->manager}}</li>
+                <li class="list-group-item">Contact: {{$event->contact}}</li>
               </ul>
               @if(($user)&&(empty($reg)))
                <a class="btn btn-success" href="{{url('/register/event/'.$fest->id.'/'.$event->id)}}">Register</a>
               @elseif(empty($reg))
-               Log In To Register
+               <button class="btn btn-success" style="margin-bottom: 25px;">Log In To Register</button>
               @else
                <a class="btn btn-success" href="{{url('/deregister/event/'.$fest->id.'/'.$event->id)}}">De-Register</a>
               @endif
