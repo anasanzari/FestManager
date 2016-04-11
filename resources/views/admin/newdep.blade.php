@@ -17,16 +17,20 @@
     <div class="col-md-6 col-md-offset-2">
       {!! Form::open(['url'=>'/admin/newdep','files' => 'true']) !!}
       <div class="form-group">
-          <input class="form-control" type="text" placeholder="Name" name="name" required="">
+          <label>Name</label>
+          <input class="form-control" type="text" name="name" required="">
       </div>
       <div class="form-group">
-          <input class="form-control" type="text" placeholder="Phone" name="phone" required="">
+          <label>Phone</label>
+          <input class="form-control" type="text" name="phone" required="">
       </div>
       <div class="form-group">
-          <input class="form-control" type="email" placeholder="Email" name="email" required="">
+          <label>Email</label>
+          <input class="form-control" type="email" name="email" required="">
       </div>
       <div class="form-group">
-         <input class="form-control" placeholder="Password" type="password" name="password" required="">
+         <label>Password</label>
+         <input class="form-control" type="password" name="password" required="">
       </div>
         <div class="form-group">
           {!! Form::submit('Confirm', ['class' => 'btn']) !!}

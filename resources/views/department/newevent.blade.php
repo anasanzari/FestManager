@@ -31,7 +31,7 @@
         </div>
         <div class="form-group">
           <label>Event Date</label>
-            <input class="form-control" type="text" name="date" required="">
+            <input class="form-control  datepicker" type="text" name="date" required="">
         </div>
         <div class="form-group">
           <label>Event Manager</label>
@@ -69,7 +69,12 @@
 @section('script')
 {!! Html::script('js/markitup/jquery.markitup.js') !!}
 {!! Html::script('js/markitup/settings.js') !!}
+{!! Html::script('js/owl.carousel.js') !!}
 <script>
   $('#text').markItUp(mySettings);
+  $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-3d'
+  });
 </script>
 @endsection
